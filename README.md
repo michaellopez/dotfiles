@@ -1,4 +1,8 @@
 dotfiles
 ========
 
-My dotfiles
+My dotfiles.
+
+Inspired by:
+
+- https://github.com/mathiasbynens/dotfiles
