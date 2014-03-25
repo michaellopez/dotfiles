@@ -1,0 +1,20 @@
+[ui]
+username = Michael Lopez <michael@weahead.se>
+ssh = ssh -C
+style = default
+ignore = ~/.hgignore
+
+[alias]
+st = !hg status $($HG root) $HG_ARGS
+
+[extensions]
+progress=
+color=
+graphlog=
+rebase=
+histedit=
+hgext.convert=
+hgext.purge=
+
+[attic]
+trymerge = false
