@@ -8,7 +8,7 @@ set smarthome
 set backup
 
 # Set backup dir to working directory.
-set backupdir ""
+set backupdir "/var/tmp/nano-backup/"
 
 # Enable multiple buffers.
 set multibuffer
@@ -30,12 +30,6 @@ set const
 
 # Enable auto indentation.
 set autoindent
-
-# Enable cut from cursor to end of line
-set cut
-
-# Enable experimental generic-purpose undo.
-set undo
 
 # Disable wrapping of long lines.
 set nowrap
