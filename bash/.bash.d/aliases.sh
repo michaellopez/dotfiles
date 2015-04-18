@@ -5,6 +5,13 @@ alias g='grep --color=auto -i'
 alias f='find . -iname'
 alias c='curl -OL'
 
+# Spacer in Dock
+# http://macs.about.com/od/usingyourmac/qt/dockspacer.htm
+function addspacertodock {
+	defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+	killall Dock
+}
+
 # Vagrant
 alias v='vagrant'
 alias va='vagrant'
