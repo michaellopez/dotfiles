@@ -1,0 +1,21 @@
+[user]
+	name = Michael Lopez
+	email = michael@weahead.se
+[core]
+	pager = cat
+	excludesfile = /Users/michael/.gitignore_global
+#	autocrlf = input
+#	safecrlf = true
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	feat = checkout -b
+	glog = log --graph --all --oneline --decorate
+[credential]
+	helper = osxkeychain
+[push]
+	default = simple
+[rerere]
+	enabled = true
