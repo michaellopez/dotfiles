@@ -1,0 +1,67 @@
+include "/usr/local/share/nano/asm.nanorc"
+include "/usr/local/share/nano/awk.nanorc"
+include "/usr/local/share/nano/c.nanorc"
+include "/usr/local/share/nano/changelog.nanorc"
+include "/usr/local/share/nano/cmake.nanorc"
+include "/usr/local/share/nano/css.nanorc"
+include "/usr/local/share/nano/default.nanorc"
+include "/usr/local/share/nano/html.nanorc"
+include "/usr/local/share/nano/java.nanorc"
+include "/usr/local/share/nano/javascript.nanorc"
+include "/usr/local/share/nano/json.nanorc"
+include "/usr/local/share/nano/lua.nanorc"
+include "/usr/local/share/nano/makefile.nanorc"
+include "/usr/local/share/nano/man.nanorc"
+include "/usr/local/share/nano/nanorc.nanorc"
+include "/usr/local/share/nano/objc.nanorc"
+include "/usr/local/share/nano/patch.nanorc"
+include "/usr/local/share/nano/perl.nanorc"
+include "/usr/local/share/nano/php.nanorc"
+include "/usr/local/share/nano/python.nanorc"
+include "/usr/local/share/nano/ruby.nanorc"
+include "/usr/local/share/nano/sh.nanorc"
+include "/usr/local/share/nano/tex.nanorc"
+include "/usr/local/share/nano/xml.nanorc"
+
+# Set tab size to 4
+set tabsize 4
+
+# Enable smart home key.
+set smarthome
+
+# Enable backups.
+set backup
+
+# Set backup dir to working directory.
+set backupdir "/var/tmp/nano-backup/"
+
+# Enable multiple buffers.
+set multibuffer
+
+# Enable history.
+set historylog
+
+# Use blank row below the title bar for editing.
+set morespace
+
+# Enable smooth scrolling, line-by-line.
+set smooth
+
+# Better word boundaries
+set wordbounds
+
+# Constantly show cursor
+set const
+
+# Enable auto indentation.
+set autoindent
+
+# Disable wrapping of long lines.
+set nowrap
+
+# Disable help screen.
+set nohelp
+
+# Enable suspend.
+set suspend
+
