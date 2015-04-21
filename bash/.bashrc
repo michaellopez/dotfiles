@@ -23,23 +23,23 @@ PS2="> "
 # Also see alternative: http://mercurial.selenic.com/wiki/PromptExtension
 #function parse_hg_branch {
 #
-#	if [ -d ".hg" ]; then
-#		BRANCH="$(hg id -b 2> /dev/null)"
+#    if [ -d ".hg" ]; then
+#        BRANCH="$(hg id -b 2> /dev/null)"
 #
-#		STATUSES="$(hg status 2> /dev/null)"
-#		STATUS=""
-#		if echo "$STATUSES" | grep '^M ' > /dev/null ; then STATUS="$STATUS*" ; fi
-#		if echo "$STATUSES" | grep '^A ' > /dev/null ; then STATUS="$STATUS+" ; fi
-#		if echo "$STATUSES" | grep '^D ' > /dev/null ; then STATUS="$STATUS-" ; fi
-#		if echo "$STATUSES" | grep '^! ' > /dev/null ; then STATUS="$STATUS!" ; fi
-#		if echo "$STATUSES" | grep '^? ' > /dev/null ; then STATUS="$STATUS%" ; fi
-#		if [ -n "$STATUS" ]; then
-#			STATUS=" $STATUS"
-#		fi
-#		if [ -n "$BRANCH" ]; then
-#			echo "[$BRANCH$STATUS]"
-#		fi
-#	fi
+#        STATUSES="$(hg status 2> /dev/null)"
+#        STATUS=""
+#        if echo "$STATUSES" | grep '^M ' > /dev/null ; then STATUS="$STATUS*" ; fi
+#        if echo "$STATUSES" | grep '^A ' > /dev/null ; then STATUS="$STATUS+" ; fi
+#        if echo "$STATUSES" | grep '^D ' > /dev/null ; then STATUS="$STATUS-" ; fi
+#        if echo "$STATUSES" | grep '^! ' > /dev/null ; then STATUS="$STATUS!" ; fi
+#        if echo "$STATUSES" | grep '^? ' > /dev/null ; then STATUS="$STATUS%" ; fi
+#        if [ -n "$STATUS" ]; then
+#            STATUS=" $STATUS"
+#        fi
+#        if [ -n "$BRANCH" ]; then
+#            echo "[$BRANCH$STATUS]"
+#        fi
+#    fi
 #}
 
 export PROMPT_COMMAND=__prompt_command  # Func to gen PS1 after CMDs
@@ -51,7 +51,7 @@ function __prompt_command() {
     local NORMAL='\[\e[0m\]'
     local RED='\[\e[0;31m\]'
 
-	local stamp=$(date +%H:%M:%S)
+    local stamp=$(date +%H:%M:%S)
 
     if [ $EXIT != 0 ]; then
         PS1+="${RED}${stamp}"
@@ -59,9 +59,11 @@ function __prompt_command() {
         PS1+="${NORMAL}${stamp}"
     fi
 
-	PS1+="${NORMAL} $(__git_ps1 "[%s] ")\$ "
+    echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}\007"
+
+    PS1+="${NORMAL} $(__git_ps1 "[%s] ")\$ "
 }
-        
+
 # Git prompt
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
@@ -71,7 +73,7 @@ GIT_PS1_SHOWSTASHSTATE=1
 
 # Custom scripts
 if [ -d ${HOME}/Scripts ]; then
-	export PATH=${HOME}/Scripts:$PATH
+    export PATH=${HOME}/Scripts:$PATH
 fi
 
 # Utility for easy cd up multiple levels
