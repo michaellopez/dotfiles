@@ -2,7 +2,7 @@
 username = Michael Lopez <michael@weahead.se>
 ssh = ssh -C
 style = default
-ignore = ~/.hgignore
+ignore = ~/.hgignore_global
 
 [alias]
 st = !hg status $($HG root) $HG_ARGS
