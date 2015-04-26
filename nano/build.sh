@@ -1,4 +1,7 @@
 #!/bin/bash
 
-cat nanorc/nanorc | sed -e s/~\\/.nano/~\\/git\\/michaellopez\\/dotfiles\\/nano\\/nanorc/g > .nanorc
-cat settings >> .nanorc
+TOKEN="~/.nano"
+REPLACE="~/git/michaellopez/dotfiles/nano/nanorc"
+
+cat ./nanorc/nanorc | sed -e s@${TOKEN}@${REPLACE}@g > ./.nanorc
+cat ./settings >> ./.nanorc
