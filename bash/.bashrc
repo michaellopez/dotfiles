@@ -4,6 +4,18 @@ case $- in
     *) return;;
 esac
 
+
+# Find out where the real files are.
+# http://stackoverflow.com/a/246128
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+
 # Bash
 shopt -s histappend
 export HISTCONTROL=ignoredups:erasedups:ignorespace
@@ -86,7 +98,7 @@ fi
 }
 
 # Extra Bash files to source automatically
-BASH_FILES_DIR="${HOME}/.bash.d"
+BASH_FILES_DIR="${DIR}/.bash.d"
 if [ -d "${BASH_FILES_DIR}" ]; then
   for i in "${BASH_FILES_DIR}"/*.sh; do
     if [ -r "${i}" ]; then
