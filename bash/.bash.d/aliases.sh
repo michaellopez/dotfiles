@@ -12,6 +12,9 @@ function addspacertodock {
 	killall Dock
 }
 
+# Restart audio - fixes muted speakers in Yosemite
+alias unmute='sudo killall coreaudiod'
+
 # Vagrant
 alias v='vagrant'
 alias va='vagrant'
