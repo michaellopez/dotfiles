@@ -12,3 +12,9 @@ fi
 if hash grunt 2>/dev/null; then
 	eval "$(grunt --completion=bash)"
 fi
+
+# NVM
+if [ -f $(brew --prefix nvm)/nvm.sh ]; then
+	export NVM_DIR=~/.nvm
+	source $(brew --prefix nvm)/nvm.sh
+fi
