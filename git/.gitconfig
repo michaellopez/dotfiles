@@ -11,7 +11,7 @@
 	ci = commit
 	co = checkout
 	br = branch
-	feat = checkout -b
+	fb = checkout -b
 	glog = log --graph --all --oneline --decorate
 [credential]
 	helper = osxkeychain
