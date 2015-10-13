@@ -26,3 +26,8 @@ if ls --color -d . >/dev/null 2>&1; then
 else
     alias ls='ls -G' # BSD
 fi
+
+# Docker
+alias dm='docker-machine'
+alias dc='eval "$(docker-machine env dev)"; docker-compose'
+alias d='eval "$(docker-machine env dev)"; docker'
