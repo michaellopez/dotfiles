@@ -18,3 +18,9 @@ if [ -f $(brew --prefix nvm)/nvm.sh ]; then
 	export NVM_DIR=~/.nvm
 	source $(brew --prefix nvm)/nvm.sh
 fi
+
+# Virtualenvwrapper
+if [ -f $(brew --prefix)/bin/virtualenvwrapper_lazy.sh ]; then
+	export WORKON_HOME=$HOME/.virtualenvs
+	source $(brew --prefix)/bin/virtualenvwrapper_lazy.sh
+fi
