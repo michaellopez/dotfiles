@@ -28,6 +28,16 @@ else
 fi
 
 # Docker
-alias dm='docker-machine'
-alias dc='eval "$(docker-machine env dev)"; docker-compose'
-alias d='eval "$(docker-machine env dev)"; docker'
+#alias dm='docker-machine '
+#alias dc='eval "$(docker-machine env dev)"; docker-compose '
+#alias d='eval "$(docker-machine env dev)"; docker '
+dcleanup(){
+  docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
+  docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
+}
+
+
+# Dinghy
+alias dm='dinghy start; dinghy '
+alias dc='dinghy start; eval "$(dinghy shellinit)"; docker-compose '
+alias d='dinghy start; eval "$(dinghy shellinit)"; docker '
