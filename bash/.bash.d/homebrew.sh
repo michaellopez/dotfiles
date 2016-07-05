@@ -1,6 +1,6 @@
 # Homebrew
 
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
@@ -9,9 +9,9 @@ fi
 
 # Gruntjs Bash completion
 # http://stackoverflow.com/a/677212
-if hash grunt 2>/dev/null; then
-	eval "$(grunt --completion=bash)"
-fi
+#if hash grunt 2>/dev/null; then
+#	eval "$(grunt --completion=bash)"
+#fi
 
 # NVM
 if [ -f $(brew --prefix nvm)/nvm.sh ]; then
@@ -24,3 +24,10 @@ if [ -f $(brew --prefix)/bin/virtualenvwrapper_lazy.sh ]; then
 	export WORKON_HOME=$HOME/.virtualenvs
 	source $(brew --prefix)/bin/virtualenvwrapper_lazy.sh
 fi
+
+# Android Studio
+export PATH="~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:${PATH}"
+export ANDROID_HOME=~/Library/Android/sdk
+
+# Caskroom
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
