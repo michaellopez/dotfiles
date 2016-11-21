@@ -1,8 +1,8 @@
 [user]
-	name = Michael Lopez
+	name = Michael Zetterberg fd. Lopez
 	email = michael@weahead.se
 [core]
-	pager = cat
+	pager = diff-so-fancy
 	excludesfile = /Users/michael/.gitignore_global
 #	autocrlf = input
 #	safecrlf = true
