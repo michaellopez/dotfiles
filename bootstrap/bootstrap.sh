@@ -17,20 +17,31 @@ confirm () {
 
 ### BASH ###
 
+DOTFILES_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )
+
 DOTBASHRC_FILE="${HOME}/.bashrc"
+DOTBASHPROFILE_FILE=${HOME}/.bash_profile"
 
 if [ -a "${DOTBASHRC_FILE}" ]; then
   echo ""
   confirm "${DOTBASHRC_FILE} exists, overwrite? [y/N] " || { echo "Aborting!"; exit 1; }
 fi
 
-DOTFILES_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )
-
 TOKEN="\[\.\.\.\]"
 
 echo ""
 echo -n "Writing ${DOTBASHRC_FILE}..."
 cat ${DOTFILES_DIR}/bootstrap/.bashrc | sed -e s@"${TOKEN}"@"${DOTFILES_DIR}"@ > ${DOTBASHRC_FILE}
+echo "done."
+
+if [ -a "${DOTBASHPROFILE_FILE}" ]; then
+  echo ""
+  confirm "${DOTBASHPROFILE_FILE} exists, overwrite? [y/N] " || { echo "Aborting!"; exit 1; }
+fi
+
+echo ""
+echo -n "Copying ${DOTBASHPROFILE_FILE}..."
+cp ${DOTFILES_DIR}/bootstrap/.bash_profile ${DOTBASHPROFILE_FILE}
 echo "done."
 
 
