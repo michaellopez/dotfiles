@@ -23,7 +23,4 @@ ${DOTFILES_DIR}/nano/build.sh ${DOTFILES_DIR}
 cd - > /dev/null
 echo "done."
 
-overwrite "${RC_DEST}"
-echo -n "Symlinking ${RC_SRC}..."
-ln -sfn ${RC_SRC} ${RC_DEST}
-echo "done."
+linkit "${RC_SRC}" "${RC_DEST}"
