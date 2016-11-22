@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 set -e
 
+linkit () {
+  overwrite $2
+  echo -n "Symlinking $2 to $1"
+  ln -sfn $1 $2
+  echo "done."
+}
+
 # http://stackoverflow.com/a/3232082
 confirm () {
   echo ""
