@@ -3,7 +3,7 @@ set -e
 
 linkit () {
   overwrite $2
-  echo -n "Symlinking $2 to $1"
+  echo -n "Symlinking $2 to $1..."
   ln -sfn $1 $2
   echo "done."
 }
