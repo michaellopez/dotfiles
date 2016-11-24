@@ -31,3 +31,11 @@ export ANDROID_HOME=~/Library/Android/sdk
 
 # Caskroom
 export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
+
+# https://github.com/caskroom/homebrew-cask/issues/13256#issuecomment-130908893
+caskup() {
+	rm -rf "$(brew --cache)"
+	brew update
+	brew cask uninstall --force "$@"
+	brew cask install "$@"
+}
