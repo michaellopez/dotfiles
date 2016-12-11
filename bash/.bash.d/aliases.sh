@@ -4,6 +4,7 @@ alias ports='lsof -Pan -i tcp -i udp'
 alias g='grep --color=auto -i'
 alias f='find . -iname'
 alias c='curl -OL'
+alias gitsdiff='find . -type d -mindepth 1 -maxdepth 1 | xargs -I{} sh -c "echo; echo {}; git -C {} st;"'
 
 # Spacer in Dock
 # http://macs.about.com/od/usingyourmac/qt/dockspacer.htm
