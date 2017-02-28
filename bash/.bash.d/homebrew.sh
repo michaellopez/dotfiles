@@ -39,3 +39,7 @@ caskup() {
 	brew cask uninstall --force "$@"
 	brew cask install "$@"
 }
+
+
+# AWS
+alias aws='aws-keychain exec michael aws'
