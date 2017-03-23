@@ -1,0 +1,9 @@
+Host github.com
+	Hostname ssh.github.com
+	User git
+	Port 443
+	IdentityFile ~/.ssh/id_rsa-github2
+
+Host *
+	AddKeysToAgent yes
+	UseKeychain yes
