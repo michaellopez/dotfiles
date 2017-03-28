@@ -4,6 +4,12 @@ Host github.com
 	Port 443
 	IdentityFile ~/.ssh/id_rsa-github2
 
+Host gitlab.com
+	Hostname altssh.gitlab.com
+	User git
+	Port 443
+	IdentityFile ~/.ssh/id_rsa-gitlab2
+
 Host *
 	AddKeysToAgent yes
 	UseKeychain yes
