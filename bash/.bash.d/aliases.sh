@@ -36,6 +36,10 @@ dcleanup(){
   docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
   docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
 }
+alias docker-clean='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock zzrot/docker-clean'
+
+# Rancher
+#alias rancher='docker run --rm -it --env-file /tmp/env -e HOME=/root -v $HOME/.rancher:/root/.rancher -v $PWD:/$(basename $PWD) -w /$(basename $PWD) weahead/rancher-cli:0.6.3'
 
 
 # Dinghy
