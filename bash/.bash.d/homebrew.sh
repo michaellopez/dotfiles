@@ -2,10 +2,11 @@
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-# Bash completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-	. $(brew --prefix)/etc/bash_completion
+# Bash completion @2
+if [[ -d "/usr/local/etc/bash_completion.d" ]]; then
+	export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 fi
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # Gruntjs Bash completion
 # http://stackoverflow.com/a/677212
