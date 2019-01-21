@@ -1,5 +1,5 @@
 # General
-alias serve='python -m SimpleHTTPServer'
+#alias serve='python -m SimpleHTTPServer'
 alias ports='lsof -Pan -i tcp -i udp'
 alias g='grep --color=auto -i'
 alias f='find . -iname'
