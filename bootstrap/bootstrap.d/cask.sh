@@ -20,5 +20,4 @@ brew cask install \
 	yujitach-menumeters
 
 open '/usr/local/Caskroom/lastpass/latest/LastPass Installer.app'
-open '/usr/local/Caskroom/little-snitch/3.7.3/Little Snitch Installer.app'
-
+echo "Run little-snitch installer"
