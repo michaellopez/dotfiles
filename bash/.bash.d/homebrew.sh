@@ -14,15 +14,14 @@ fi
 #fi
 
 # NVM
-if [ -f $(brew --prefix nvm)/nvm.sh ]; then
-	export NVM_DIR=~/.nvm
-	source $(brew --prefix nvm)/nvm.sh
-fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
 # Virtualenvwrapper
-if [ -f $(brew --prefix)/bin/virtualenvwrapper_lazy.sh ]; then
+if [ -f "/usr/local/bin/virtualenvwrapper_lazy.sh" ]; then
 	export WORKON_HOME=$HOME/.virtualenvs
-	source $(brew --prefix)/bin/virtualenvwrapper_lazy.sh
+	source "/usr/local/bin/virtualenvwrapper_lazy.sh"
 fi
 
 # Android Studio
