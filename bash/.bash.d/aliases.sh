@@ -46,3 +46,4 @@ alias docker-clean='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock
 alias dm='dinghy start; dinghy '
 alias dc='dinghy start; eval "$(dinghy shellinit)"; docker-compose '
 alias d='dinghy start; eval "$(dinghy shellinit)"; docker '
+alias ds='dinghy ssh sudo ntpclient -s -h pool.ntp.org'
