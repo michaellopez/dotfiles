@@ -14,6 +14,7 @@
 	fb = checkout -b
 	glog = log --graph --all --oneline --decorate
 	glog1 = log --graph --oneline --decorate
+	start = !git init && git commit --allow-empty -m \"Initial commit\"
 [credential]
 	helper = osxkeychain
 [push]
