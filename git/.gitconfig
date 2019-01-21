@@ -13,6 +13,7 @@
 	br = branch
 	fb = checkout -b
 	glog = log --graph --all --oneline --decorate
+	glog1 = log --graph --oneline --decorate
 [credential]
 	helper = osxkeychain
 [push]
