@@ -17,7 +17,7 @@
 	helper = osxkeychain
 [push]
 	default = simple
-        followTags = true
+	followTags = true
 [rerere]
 	enabled = true
 [diff]
